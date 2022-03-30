@@ -4,9 +4,6 @@ public class KillField : MonoBehaviour
 {
     [SerializeField]
     private GameObject Player;
-
-    [SerializeField]
-    private GameObject KillObject;
     
     void OnCollisionEnter2D(Collision2D col)
     {
