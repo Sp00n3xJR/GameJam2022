@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     private GameObject Player;
 
     public int Health = 100;
+    public int Points = 0;
 
     void Update()
     {
@@ -20,7 +21,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void ReloadScene()
+    public void ReloadScene()
     {
         Scene CurrentScene = SceneManager.GetActiveScene();
 
