@@ -26270,6 +26270,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 15
+  Jumping: 1
+  DoubleJumping: 0
+  JumpDelay: 2
+  JumpHeight: {x: 0, y: 8}
 --- !u!212 &864433327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26398,7 +26402,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 864433325}
   Health: 100
-  Points: 0
 --- !u!1 &877495282
 GameObject:
   m_ObjectHideFlags: 0
@@ -27421,8 +27424,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712306890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8, y: 1.52, z: 0}
-  m_LocalScale: {x: 0.40412003, y: 6.9218, z: 1}
+  m_LocalPosition: {x: 206.64, y: 2.46, z: 0}
+  m_LocalScale: {x: 0.1, y: 6.9218, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
