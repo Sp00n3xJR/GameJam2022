@@ -7,7 +7,6 @@ public class PlayerManager : MonoBehaviour
     private GameObject Player;
 
     public int Health = 100;
-    public int Points = 0;
 
     void Update()
     {
@@ -15,7 +14,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (Health <= 0)
             {
-                Invoke(nameof(ReloadScene), 1f);
+                ReloadScene();
                 Player.SetActive(false);
             }
         }
