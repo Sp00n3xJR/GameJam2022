@@ -15,6 +15,5 @@ public class LevelEndUI : MonoBehaviour
     void OnEnable()
     {
         FinalTimeObj.text = "Final time: " + ElapsedTimeObj.GetComponent<ElapsedTime>().elapsedTime.ToString() + " seconds!";
-        ElapsedTimeObj.text = "";
     }
 }

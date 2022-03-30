@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void ReloadScene()
+    public static void ReloadScene()
     {
         Scene CurrentScene = SceneManager.GetActiveScene();
 
