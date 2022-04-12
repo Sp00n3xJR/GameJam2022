@@ -129,6 +129,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
+--root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
@@ -140,7 +141,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.Common.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
---root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
@@ -290,6 +290,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
+--root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
@@ -301,7 +302,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.Common.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
---root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
 --root-assembly=C:\Users\matil\Documents\GitHub\GameJam2022\GameJam2022\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
