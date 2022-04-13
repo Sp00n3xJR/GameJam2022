@@ -21,22 +21,23 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        if (Jumping && Input.GetKeyDown(KeyCode.Space) & JumpDelay <= 0) // Jumping
-        {
-            rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
-            JumpDelay = OrgJumpDelay;
-            StartCoroutine(DecreaseDelay());
-        }
-    }
-
     void FixedUpdate()
     {
         float MoveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(MoveHorizontal, 0);
 
         rb2d.AddForce(movement * Speed);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
+        if (hit.collider != null)
+        {
+            if (Jumping && Input.GetKeyDown(KeyCode.Space) & JumpDelay <= 0) // Jumping
+            {
+                rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
+                JumpDelay = OrgJumpDelay;
+                StartCoroutine(DecreaseDelay());
+            }
+        }
     }
 
     private IEnumerator DecreaseDelay()
