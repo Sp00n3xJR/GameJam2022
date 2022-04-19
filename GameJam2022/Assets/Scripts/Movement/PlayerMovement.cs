@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Jump(InputAction.CallbackContext context)
+    public void Jump()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
         if (hit.collider != null)
