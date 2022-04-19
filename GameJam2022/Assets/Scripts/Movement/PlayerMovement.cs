@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         while (pressed)
         {
             float MoveHorizontal = Input.GetAxis("Horizontal");
-            Vector2 movement = new Vector2(MoveHorizontal, 0);
+            Vector2 movement = new(MoveHorizontal, 0);
 
             rb2d.AddForce(movement * Speed);
             break;
