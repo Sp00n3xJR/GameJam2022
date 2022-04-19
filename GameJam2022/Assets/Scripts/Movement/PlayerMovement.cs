@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,27 +15,44 @@ public class PlayerMovement : MonoBehaviour
     public int JumpDelay;
     public Vector2 JumpHeight;
 
+    bool pressed = false;
+
     void Start()
     {
         OrgJumpDelay = JumpDelay;
         JumpDelay = 0;
         rb2d = GetComponent<Rigidbody2D>();
     }
-
-    public void Movement()
+    
+    public void Movement(InputAction.CallbackContext context)
     {
-        float MoveHorizontal = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(MoveHorizontal, 0);
+        pressed = true;
 
-        rb2d.AddForce(movement * Speed);
+        bool canceled = context.canceled;
+        if (canceled)
+        {
+            pressed = false;
+        }
     }
 
-    public void Jump()
+    private void FixedUpdate()
+    {
+        while (pressed)
+        {
+            float MoveHorizontal = Input.GetAxis("Horizontal");
+            Vector2 movement = new Vector2(MoveHorizontal, 0);
+
+            rb2d.AddForce(movement * Speed);
+            break;
+        }
+    }
+
+    public void Jump(InputAction.CallbackContext context)
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
         if (hit.collider != null)
         {
-            if (Jumping & JumpDelay <= 0) // Jumping
+            if (Jumping & JumpDelay <= 0)
             {
                 rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
                 JumpDelay = OrgJumpDelay;
