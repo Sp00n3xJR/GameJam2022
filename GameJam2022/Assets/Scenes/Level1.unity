@@ -26610,6 +26610,7 @@ GameObject:
   - component: {fileID: 864433326}
   - component: {fileID: 864433331}
   - component: {fileID: 864433330}
+  - component: {fileID: 864433333}
   - component: {fileID: 864433329}
   - component: {fileID: 864433332}
   m_Layer: 0
@@ -26633,9 +26634,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 15
   Jumping: 1
-  DoubleJumping: 0
+  DoubleJumping: 1
   JumpDelay: 2
-  JumpHeight: {x: 0, y: 3}
+  JumpHeight: {x: 0, y: 5}
 --- !u!212 &864433327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26713,7 +26714,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -26874,6 +26875,32 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1888701634}
+--- !u!61 &864433333
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864433325}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &877495282
 GameObject:
   m_ObjectHideFlags: 0
