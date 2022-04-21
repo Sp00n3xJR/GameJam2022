@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -76,6 +77,16 @@ public class PlayerMovement : MonoBehaviour
                     Jumps += 1;
                 }
             }
+        }
+    }
+
+    // When touching a tilemap object, reset jumps.
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.activeSelf & col.gameObject.GetComponent<Tilemap>())
+        {
+            Jumps = 0;
+            JumpDelay = 0;
         }
     }
 
