@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool DoubleJumping = false;
 
     private int OrgJumpDelay;
+    private int Jumps;
     public int JumpDelay;
     public Vector2 JumpHeight;
 
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // InputAction is stupid and doesn't have a proper keyhold action so I have to do this BS.
     private void FixedUpdate()
     {
         while (pressed)
@@ -47,16 +49,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Jump()
+    public void Jump(InputAction.CallbackContext context)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
-        if (hit.collider != null)
+        if (!DoubleJumping)
         {
             if (Jumping & JumpDelay <= 0)
             {
                 rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
                 JumpDelay = OrgJumpDelay;
                 StartCoroutine(DecreaseDelay());
+            }
+        }
+        else if (DoubleJumping)
+        {
+            if (Jumping & JumpDelay <= 0)
+            {
+                if (Jumps >= 2)
+                {
+                    rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
+                    JumpDelay = OrgJumpDelay;
+                    StartCoroutine(DecreaseDelay());
+                }
+                else
+                {
+                    rb2d.AddForce(JumpHeight, ForceMode2D.Impulse);
+                    Jumps += 1;
+                }
             }
         }
     }
@@ -68,5 +86,6 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(1);
             JumpDelay -= 1;
         }
+        Jumps = 0;
     }
 }
