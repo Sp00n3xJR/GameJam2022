@@ -17,13 +17,14 @@ public class Upgrades : MonoBehaviour
             }
             else
             {
-                if (upgrades == Upgrade.Speed)
+                switch (upgrades)
                 {
-                    Player.GetComponent<PlayerMovement>().Speed += UpgradeAmount;
-                }
-                if (upgrades == Upgrade.JumpHeight)
-                {
-                    Player.GetComponent<PlayerMovement>().JumpHeight.y += UpgradeAmount;
+                    case Upgrade.Speed:
+                        Player.GetComponent<PlayerMovement>().Speed += UpgradeAmount;
+                        break;
+                    case Upgrade.JumpHeight:
+                        Player.GetComponent<PlayerMovement>().JumpHeight.y += UpgradeAmount;
+                        break;
                 }
             }
             this.gameObject.SetActive(false);
