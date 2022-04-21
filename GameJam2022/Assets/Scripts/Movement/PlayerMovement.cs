@@ -86,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.activeSelf & col.gameObject.GetComponent<Tilemap>())
         {
             Jumps = 0;
-            JumpDelay = 0;
         }
     }
 
@@ -97,6 +96,5 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(1);
             JumpDelay -= 1;
         }
-        Jumps = 0;
     }
 }
