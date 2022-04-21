@@ -23,7 +23,7 @@ public class Upgrades : MonoBehaviour
                 }
                 if (upgrades == Upgrade.JumpHeight)
                 {
-                    Player.GetComponent<PlayerMovement>().JumpHeight = new(0, UpgradeAmount);
+                    Player.GetComponent<PlayerMovement>().JumpHeight.y += UpgradeAmount;
                 }
             }
             this.gameObject.SetActive(false);
