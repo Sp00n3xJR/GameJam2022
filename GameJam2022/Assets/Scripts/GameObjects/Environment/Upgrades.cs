@@ -59,19 +59,17 @@ public class CustomInspector : Editor
 
         upgradeScript.upgrades = (Upgrades.Upgrade)EditorGUILayout.EnumPopup(upgradeScript.upgrades);
 
-        using (var group = new EditorGUILayout.FadeGroupScope(Convert.ToSingle(upgradeScript.upgrades)))
+        using var group = new EditorGUILayout.FadeGroupScope(Convert.ToSingle(upgradeScript.upgrades));
+        switch (upgradeScript.upgrades)
         {
-            switch(upgradeScript.upgrades)
-            {
-                case Upgrades.Upgrade.Speed:
-                    upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
-                    serializedObject.Update();
-                    break;
-                case Upgrades.Upgrade.JumpHeight:
-                    upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
-                    serializedObject.Update();
-                    break;
-            }
+            case Upgrades.Upgrade.Speed:
+                upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
+                serializedObject.Update();
+                break;
+            case Upgrades.Upgrade.JumpHeight:
+                upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
+                serializedObject.Update();
+                break;
         }
     }
 }
