@@ -13,6 +13,9 @@ public class Upgrades : MonoBehaviour
 
             switch (upgrades)
             {
+                case Upgrade.Jumping:
+                    Player.GetComponent<PlayerMovement>().Jumping = true;
+                    break;
                 case Upgrade.DoubleJumping:
                     Player.GetComponent<PlayerMovement>().DoubleJumping = true;
                     break;
@@ -31,6 +34,7 @@ public class Upgrades : MonoBehaviour
     {
         Speed,
         JumpHeight,
+        Jumping,
         DoubleJumping
     }
 }
