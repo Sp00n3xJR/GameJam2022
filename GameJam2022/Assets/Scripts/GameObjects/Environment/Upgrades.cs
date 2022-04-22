@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEditor;
+using System;
 
 public class Upgrades : MonoBehaviour
 {
@@ -17,8 +19,16 @@ public class Upgrades : MonoBehaviour
                     Player.GetComponent<PlayerMovement>().Jumping = true;
                     break;
                 case Upgrade.DoubleJumping:
-                    Player.GetComponent<PlayerMovement>().DoubleJumping = true;
-                    break;
+                    if (!Player.GetComponent<PlayerMovement>().Jumping)
+                    {
+                        Player.GetComponent<PlayerMovement>().Jumping = true;
+                        return;
+                    }
+                    else
+                    {
+                        Player.GetComponent<PlayerMovement>().DoubleJumping = true;
+                        break;
+                    }
                 case Upgrade.Speed:
                     Player.GetComponent<PlayerMovement>().Speed += UpgradeAmount;
                     break;
@@ -36,5 +46,32 @@ public class Upgrades : MonoBehaviour
         JumpHeight,
         Jumping,
         DoubleJumping
+    }
+}
+
+[CustomEditor(typeof(Upgrades))]
+public class CustomInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+        Upgrades upgradeScript = target as Upgrades;
+
+        upgradeScript.upgrades = (Upgrades.Upgrade)EditorGUILayout.EnumPopup(upgradeScript.upgrades);
+
+        using (var group = new EditorGUILayout.FadeGroupScope(Convert.ToSingle(upgradeScript.upgrades)))
+        {
+            switch(upgradeScript.upgrades)
+            {
+                case Upgrades.Upgrade.Speed:
+                    upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
+                    serializedObject.Update();
+                    break;
+                case Upgrades.Upgrade.JumpHeight:
+                    upgradeScript.UpgradeAmount = EditorGUILayout.IntField(upgradeScript.UpgradeAmount);
+                    serializedObject.Update();
+                    break;
+            }
+        }
     }
 }

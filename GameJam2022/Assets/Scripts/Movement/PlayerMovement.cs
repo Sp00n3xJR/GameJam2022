@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public int Speed;
-
-    // Movement Upgrades
     public bool Jumping = false;
     public bool DoubleJumping = false;
 
