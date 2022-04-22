@@ -11,23 +11,19 @@ public class Upgrades : MonoBehaviour
         {
             GameObject Player = collision.gameObject;
 
-            if (upgrades == Upgrade.DoubleJumping)
+            switch (upgrades)
             {
-                Player.GetComponent<PlayerMovement>().DoubleJumping = true;
+                case Upgrade.DoubleJumping:
+                    Player.GetComponent<PlayerMovement>().DoubleJumping = true;
+                    break;
+                case Upgrade.Speed:
+                    Player.GetComponent<PlayerMovement>().Speed += UpgradeAmount;
+                    break;
+                case Upgrade.JumpHeight:
+                    Player.GetComponent<PlayerMovement>().JumpHeight.y += UpgradeAmount;
+                    break;
             }
-            else
-            {
-                switch (upgrades)
-                {
-                    case Upgrade.Speed:
-                        Player.GetComponent<PlayerMovement>().Speed += UpgradeAmount;
-                        break;
-                    case Upgrade.JumpHeight:
-                        Player.GetComponent<PlayerMovement>().JumpHeight.y += UpgradeAmount;
-                        break;
-                }
-            }
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
