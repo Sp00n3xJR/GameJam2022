@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,17 +7,18 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public int Speed;
+    public float Speed;
     public bool Jumping = false;
     public bool DoubleJumping = false;
 
-    private int OrgJumpDelay;
     private int Jumps;
-    public int JumpDelay;
+
+    [NonSerialized] public float OrgJumpDelay;
+ 
+    public float JumpDelay;
     public Vector2 JumpHeight;
 
     bool pressed = false;
-
     void Start()
     {
         OrgJumpDelay = JumpDelay;
