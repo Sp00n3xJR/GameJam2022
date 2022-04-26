@@ -1393,7 +1393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 996826915}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: GoToLevel2
+        m_MethodName: GoToLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
